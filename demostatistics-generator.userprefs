@@ -2,14 +2,15 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="StatisticsGenerator/Program.cs">
     <Files>
-      <File FileName="StatisticsGenerator/Program.cs" Line="34" Column="34" />
-      <File FileName="demoinfo-public/DemoInfo/Events.cs" Line="3" Column="3" />
-      <File FileName="demoinfo-public/DemoInfo/DP/Handler/GameEventHandler.cs" Line="29" Column="29" />
-      <File FileName="demoinfo-public/DemoInfo/DemoParser.cs" Line="48" Column="48" />
+      <File FileName="StatisticsGenerator/Program.cs" Line="7" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/moritz/git/demostatistics-generator/StatisticsGenerator/Program.cs" line="49" column="1" />
+      <Breakpoint file="/home/moritz/git/demostatistics-generator/StatisticsGenerator/Program.cs" line="32" column="1" />
+      <Breakpoint file="/home/moritz/git/demostatistics-generator/StatisticsGenerator/Program.cs" line="13" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

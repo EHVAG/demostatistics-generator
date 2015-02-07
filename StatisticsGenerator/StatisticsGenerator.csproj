@@ -32,6 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="DemoInfo">
+      <HintPath>..\packages\DemoInfo.1.0.1\lib\net45\DemoInfo.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -39,9 +42,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\demoinfo-public\DemoInfo\DemoInfo.csproj">
-      <Project>{22D4CFC7-6810-4C18-A353-71A49782394F}</Project>
-      <Name>DemoInfo</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
