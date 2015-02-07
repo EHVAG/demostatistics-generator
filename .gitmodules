@@ -1,0 +1,3 @@
+[submodule "demoinfo-public"]
+	path = demoinfo-public
+	url = https://github.com/moritzuehling/demoinfo-public.git

@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="StatisticsGenerator/StatisticsGenerator.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="StatisticsGenerator/Program.cs">
+    <Files>
+      <File FileName="StatisticsGenerator/Program.cs" Line="34" Column="34" />
+      <File FileName="demoinfo-public/DemoInfo/Events.cs" Line="3" Column="3" />
+      <File FileName="demoinfo-public/DemoInfo/DP/Handler/GameEventHandler.cs" Line="29" Column="29" />
+      <File FileName="demoinfo-public/DemoInfo/DemoParser.cs" Line="48" Column="48" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
