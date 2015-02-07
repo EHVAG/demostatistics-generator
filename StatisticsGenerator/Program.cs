@@ -176,6 +176,7 @@ namespace StatisticsGenerator
 							}
 						};
 
+						//So now lets do some fancy output
 						parser.RoundEnd += (sender, e) => {
 							if(!hasMatchStarted)
 								return;
@@ -223,6 +224,55 @@ namespace StatisticsGenerator
 
 						//Now let's parse the demo!
 						parser.ParseToEnd ();
+
+						//And output the result of the last round again. 
+						//This code-duplication is bad, but it's the only workaround that does really work :/
+						//In a real app, you'd have RoundEnd a method-call of course ;)
+						{
+							if(!hasMatchStarted)
+								return;
+
+							//okay, get the topfragger:
+							var topfragger = killsThisRound.OrderByDescending(x => x.Value).FirstOrDefault();
+
+							if(topfragger.Equals(default(KeyValuePair<Player, int>)))
+								topfragger = new KeyValuePair<Player, int>(new Player(), 0);
+
+							//At the end of each round, let's write down some statistics!
+							outputStream.WriteLine(string.Format(
+								"{0};{1};{2};{3};{4};{5};{6};{7};{8};{9};{10};{11};{12};{13};{14};{15};{16};{17};{18};{19};{20};{21};{22};{23};",
+								parser.CTScore + parser.TScore, //Round-Number
+								parser.CTScore,
+								parser.TScore,
+								//how many CTs are still alive?
+								parser.PlayingParticipants.Count(a => a.IsAlive && a.Team == Team.CounterTerrorist),
+								//how many Ts are still alive?
+								parser.PlayingParticipants.Count(a => a.IsAlive && a.Team == Team.Terrorist),
+								ctStartroundMoney,
+								tStartroundMoney,
+								ctEquipValue,
+								tEquipValue,
+								ctSaveAmount,
+								tSaveAmount,
+								ctWay,
+								tWay,
+								//The kills of all CTs so far
+								parser.PlayingParticipants.Where(a => a.Team == Team.CounterTerrorist).Sum(a => a.AdditionaInformations.Kills),
+								parser.PlayingParticipants.Where(a => a.Team == Team.Terrorist).Sum(a => a.AdditionaInformations.Kills),
+								//The deaths of all CTs so far
+								parser.PlayingParticipants.Where(a => a.Team == Team.CounterTerrorist).Sum(a => a.AdditionaInformations.Deaths),
+								parser.PlayingParticipants.Where(a => a.Team == Team.Terrorist).Sum(a => a.AdditionaInformations.Deaths),
+								//The assists of all CTs so far
+								parser.PlayingParticipants.Where(a => a.Team == Team.CounterTerrorist).Sum(a => a.AdditionaInformations.Assists),
+								parser.PlayingParticipants.Where(a => a.Team == Team.Terrorist).Sum(a => a.AdditionaInformations.Assists),
+								plants,
+								defuses,
+								"\"" + topfragger.Key.Name + "\"", //The name of the topfragger this round
+								topfragger.Key.SteamID, //The steamid of the topfragger this round
+								topfragger.Value //The amount of kills he got
+							));
+						}
+
 
 						//Lets just display an end-game-scoreboard!
 
