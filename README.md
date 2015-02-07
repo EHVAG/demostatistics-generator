@@ -23,4 +23,4 @@ parser.MatchStarted += parser_MatchStarted;
 parser.PlayerKilled += HandlePlayerKilled;
 parser.WeaponFired += HandleWeaponFired;
 ```
-For starting parsing, you first need to parse the Header of the Demo by calling the ``ParsHeader``-Method of the ``DemoParser``. You can either parse the whole demo (then you call ``parser.ParseToEnd()``), or parse tick by tick. (then call  repeatedly ``parser.ParseNextTick ()`` to parse the next tick). The method returns ``true`` as long as there is an other tick. 
+For starting parsing, you first need to parse the Header of the Demo by calling the ``ParseHeader``-Method of the ``DemoParser``. You can either parse the whole demo (then you call ``parser.ParseToEnd()``), or parse tick by tick. (then call  repeatedly ``parser.ParseNextTick ()`` to parse the next tick). The method returns ``true`` as long as there is an other tick. 
