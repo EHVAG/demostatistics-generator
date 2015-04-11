@@ -12,7 +12,7 @@ namespace StatisticsGenerator
 		public static void Main (string[] args)
 		{
 			// First, check wether the user needs assistance:
-			if (args [0] == "--help") {
+			if (args.Length == 0 || args [0] == "--help") {
 				PrintHelp ();
 				return;
 			}
