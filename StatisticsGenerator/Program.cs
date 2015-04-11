@@ -292,7 +292,7 @@ namespace StatisticsGenerator
 			Console.WriteLine ("CS:GO Demo-Statistics-Generator");
 			Console.WriteLine ("http://github.com/moritzuehling/demostatistics-creator");
 			Console.WriteLine ("------------------------------------------------------");
-			Console.WriteLine ("Usage: {0} [--help] [--scoreboard] file1.dem [file2.dem ...]");
+			Console.WriteLine ("Usage: {0} [--help] [--scoreboard] file1.dem [file2.dem ...]", fileName);
 			Console.WriteLine ("--help");
 			Console.WriteLine ("    Displays this help");
 			Console.WriteLine ("--frags");
