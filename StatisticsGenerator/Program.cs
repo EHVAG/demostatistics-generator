@@ -25,7 +25,16 @@ namespace StatisticsGenerator
 				}
 				return;
 			}
-			
+
+			if (args [0] == "--frags") {
+				using (var fileStream = File.OpenRead (args[1])) {
+					using (var parser = new DemoParser(fileStream)) {
+						FragGenerator.GenerateFrags(parser);
+					}
+				}
+				return;
+			}
+
 			// Every argument is a file, so let's iterate over all the arguments
 			// So you can call this program like
 			// > StatisticsGenerator.exe hello.dem bye.dem
@@ -230,7 +239,6 @@ namespace StatisticsGenerator
 								player.AdditionaInformations.Assists
 							);
 
-
 						outputStream.Close ();
 					}
 
@@ -287,8 +295,12 @@ namespace StatisticsGenerator
 			Console.WriteLine ("Usage: {0} [--help] [--scoreboard] file1.dem [file2.dem ...]");
 			Console.WriteLine ("--help");
 			Console.WriteLine ("    Displays this help");
+			Console.WriteLine ("--frags");
+			Console.WriteLine ("    Displays only the frags happening in this demo in the format. Cannot be used with anything else. Only works with 1 file. ");
+			Console.WriteLine ("    Output-format (example): <Hyper><76561198014874496><CT> + <centralize><76561198085059888><CT> [M4A1] <percy><76561197996475850><T>");
+			Console.WriteLine ("--scoreboard");
 			Console.WriteLine ("    Displays only the scoreboards on every round_end event. Cannot be used with anything else. Only works with 1 file. ");
-			Console.WriteLine ("    <GeT_RiGhT> + <f0rest> [ak47] <JW>");
+
 			Console.WriteLine ("file1.dem");
 			Console.WriteLine ("    Path to a demo to be parsed. The resulting file with have the same name, ");
 			Console.WriteLine ("    except that it'll end with \".dem.[map].csv\", where [map] is the map.");
