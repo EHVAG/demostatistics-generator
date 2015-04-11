@@ -6,7 +6,6 @@ namespace StatisticsGenerator
 	public static class FragGenerator
 	{
 		public static void GenerateFrags(DemoParser parser) {
-
 			parser.ParseHeader ();
 
 			// Make a print on round-start so you can see the actual frags per round. 
@@ -26,7 +25,17 @@ namespace StatisticsGenerator
 					Console.Write(" + <{0}><{1}><{2}>", e.Assister.Name, e.Assister.SteamID, ShortTeam(e.Assister.Team));
 				}
 
-				Console.Write(" [{0}] ", e.Weapon.Weapon);
+				Console.Write(" [{0}]", e.Weapon.Weapon);
+
+				if(e.Headshot) {
+					Console.Write("[HS]");
+				}
+
+				if(e.PenetratedObjects > 0) {
+					Console.Write("[Wall]");
+				}
+
+				Console.Write(" ");
 
 				Console.Write("<{0}><{1}><{2}>", e.DeathPerson.Name, e.DeathPerson.SteamID, ShortTeam(e.DeathPerson.Team));
 

@@ -297,7 +297,7 @@ namespace StatisticsGenerator
 			Console.WriteLine ("    Displays this help");
 			Console.WriteLine ("--frags");
 			Console.WriteLine ("    Displays only the frags happening in this demo in the format. Cannot be used with anything else. Only works with 1 file. ");
-			Console.WriteLine ("    Output-format (example): <Hyper><76561198014874496><CT> + <centralize><76561198085059888><CT> [M4A1] <percy><76561197996475850><T>");
+			Console.WriteLine ("    Output-format (example): <Hyper><76561198014874496><CT> + <centralize><76561198085059888><CT> [M4A1][HS][Wall] <percy><76561197996475850><T>");
 			Console.WriteLine ("--scoreboard");
 			Console.WriteLine ("    Displays only the scoreboards on every round_end event. Cannot be used with anything else. Only works with 1 file. ");
 
