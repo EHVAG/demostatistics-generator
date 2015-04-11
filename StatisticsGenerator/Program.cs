@@ -16,6 +16,15 @@ namespace StatisticsGenerator
 				PrintHelp ();
 				return;
 			}
+
+			if (args [0] == "--scoreboard") {
+				using (var fileStream = File.OpenRead (args[1])) {
+					using (var parser = new DemoParser(fileStream)) {
+						ScoreboardGenerator.GenerateScoreboards(parser);
+					}
+				}
+				return;
+			}
 			
 			// Every argument is a file, so let's iterate over all the arguments
 			// So you can call this program like
@@ -275,9 +284,13 @@ namespace StatisticsGenerator
 			Console.WriteLine ("CS:GO Demo-Statistics-Generator");
 			Console.WriteLine ("http://github.com/moritzuehling/demostatistics-creator");
 			Console.WriteLine ("------------------------------------------------------");
+			Console.WriteLine ("Usage: {0} [--help] [--scoreboard] file1.dem [file2.dem ...]");
 			Console.WriteLine ("Usage: {0} [--help] file1.dem [file2.dem ...]");
 			Console.WriteLine ("--help");
 			Console.WriteLine ("    Displays this help");
+			Console.WriteLine ("--scoreboards");
+			Console.WriteLine ("    Displays only the scoreboards on every round_end event. Cannot be used with anything else. Only works with 1 file. ");
+			Console.WriteLine ("    <GeT_RiGhT> + <f0rest> [ak47] <JW>");
 			Console.WriteLine ("file1.dem");
 			Console.WriteLine ("    Path to a demo to be parsed. The resulting file with have the same name, ");
 			Console.WriteLine ("    except that it'll end with \".dem.[map].csv\", where [map] is the map.");
