@@ -1,9 +1,13 @@
 # demostatistics-generator
 Generates some statistics for CS:GO demos. 
 
+
+
 This project was mainly made as an example for [demoinfo-public](https://github.com/moritzuehling/demoinfo-public). If you want to want an entry-code how demoinfo-public should be used, look at [the `Main()`-method](https://github.com/moritzuehling/demostatistics-generator/blob/master/StatisticsGenerator/Program.cs). If you think that this code is waaaay to long for what it does look at the [version where I stripped it of the boilerplate](https://github.com/moritzuehling/demostatistics-generator/blob/master/StatisticsGenerator/MainClassSmall.cs).
 
 I tried to document everything. If you have useage-questions you can post them here as an issue!
+
+**This code only works for Valve demos (i.e. from majors and matchmaking), for other demos all might not work! This is because there might be mutliple match_started events when the match was restarted (lo3), and many of those details. This must all be handled in your application-logic, because the parser can't account for that. It isn't handled in this project because this is only an example to show how the parser is used generally**
 
 ![Example output](http://i.imgur.com/3AseeH4.png)
 
