@@ -285,10 +285,8 @@ namespace StatisticsGenerator
 			Console.WriteLine ("http://github.com/moritzuehling/demostatistics-creator");
 			Console.WriteLine ("------------------------------------------------------");
 			Console.WriteLine ("Usage: {0} [--help] [--scoreboard] file1.dem [file2.dem ...]");
-			Console.WriteLine ("Usage: {0} [--help] file1.dem [file2.dem ...]");
 			Console.WriteLine ("--help");
 			Console.WriteLine ("    Displays this help");
-			Console.WriteLine ("--scoreboards");
 			Console.WriteLine ("    Displays only the scoreboards on every round_end event. Cannot be used with anything else. Only works with 1 file. ");
 			Console.WriteLine ("    <GeT_RiGhT> + <f0rest> [ak47] <JW>");
 			Console.WriteLine ("file1.dem");
