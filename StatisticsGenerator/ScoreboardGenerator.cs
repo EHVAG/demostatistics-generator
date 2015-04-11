@@ -31,7 +31,9 @@ namespace StatisticsGenerator
 
 				roundEndedCount ++;
 
-				if(roundEndedCount < 16) {
+				// Wait twice the tickrate of the demo (~2 seconds) to make sure the 
+				// screen has been updated. I *LOVE* demo files :)
+				if(roundEndedCount < parser.TickRate * 2) {
 					return;
 				}
 
