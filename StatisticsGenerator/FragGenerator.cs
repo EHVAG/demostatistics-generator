@@ -6,7 +6,6 @@ namespace StatisticsGenerator
 	public static class FragGenerator
 	{
 		public static void GenerateFrags(DemoParser parser) {
-			int i = 0;
 
 			parser.ParseHeader ();
 
