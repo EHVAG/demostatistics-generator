@@ -57,7 +57,7 @@ namespace StatisticsGenerator
 						player.AdditionaInformations.Score
 					);
 
-				Console.WriteLine("CTs\t" + parser.TClanName);
+				Console.WriteLine("CTs\t" + parser.CTClanName);
 				Console.WriteLine("Tag\tName\tSteamID\tKills\tDeaths\tAssists\tScore\t");
 				foreach(var player in parser.PlayingParticipants.Where(a => a.Team == Team.CounterTerrorist))
 					Console.WriteLine (
